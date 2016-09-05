@@ -137,3 +137,11 @@ configurations {
 ```
 
 Thanks to [@jineum](https://github.com/ManifestWebDesign/twitter-connect-plugin/issues/8#issuecomment-139521036)
+
+### Android 4.4 - Problem: the authentication fails with a "Failed login session" error
+
+This can happen if the Android launch mode in your Cordova project is configured in singleInstance mode. This mode seems to break the activity processing on android 4.4 and you need to use one of the other mode, most likely singleTask : 
+
+```
+<preference name="AndroidLaunchMode" value="singleTask"/>
+```
